@@ -5,11 +5,12 @@
 ## インストール
 
 - ### インストールコマンド
+
   `npm i @gn5r/vue-common-confirm @fortawesome/fontawesome-free`  
   `vue add vuetify`  
   本コンポーネントは`Vuetify`および`fontawesome-free`を使用しているので併せてインストールしてください
 
-* ### 依存関係(公開時バージョン)
+- ### 依存関係(公開時バージョン)
   - vue:^2.6.11
   - vuetify:^2.2.11
   - @fortawesome/fontawesome-free:^5.13.0
