@@ -61,7 +61,7 @@ export default {
 
 ## 関数一覧
 
-- ### confirm(message, callback = null)
+- confirm(message, callback = null)
 
   ```
   標準的な確認用ダイアログ
@@ -69,7 +69,7 @@ export default {
   callback:ダイアログの"はい"を押下後に実行されるコールバック関数
   ```
 
-- ### warning(message, callback = null)
+- warning(message, callback = null)
 
   ```
   警告の意味を強めた確認用ダイアログ
@@ -77,21 +77,21 @@ export default {
   callback:ダイアログの"はい"を押下後に実行されるコールバック関数
   ```
 
-- ### error(message)
+- error(message)
 
   ```
   エラー発生時用ダイアログ
   message:ダイアログ内に表示するメッセージ
   ```
 
-- ### complete(message)
+- complete(message)
 
   ```
   処理などが完了した時用ダイアログ
   message:ダイアログ内に表示するメッセージ
   ```
 
-- ### modal(message)
+- modal(message)
 
   ```
   javascriptのalert関数のオリジナル版。ヘッダーも無いのでalertと似た感覚で使用できる筈
