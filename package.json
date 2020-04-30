@@ -37,5 +37,6 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/gn5r/vue-common-confirm.git"
-  }
+  },
+  "homepage": "https://gn5r.github.io"
 }
