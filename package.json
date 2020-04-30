@@ -1,6 +1,6 @@
 {
   "name": "@gn5r/vue-common-confirm",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": false,
   "description": "Vue.js用共通ダイアログコンポーネント",
   "author": "gn5r",
