@@ -7,4 +7,10 @@ module.exports = {
   },
   // Demo成果物出力ディレクトリ名
   outputDir: "docs",
+
+  // 本webアプリのurl的なやつ
+  publicPath: "./",
+
+  // 画像ファイルなどにハッシュ値を付与しない
+  filenameHashing: false,
 };
