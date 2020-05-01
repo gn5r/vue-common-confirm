@@ -24,15 +24,15 @@
 <template>
   <div>
     <button @click="addData">追加</button>
+    <confirm
+      :dialog.sync="confirmObj.dialog"
+      :title="confirmObj.title"
+      :titleIcon="confirmObj.titleIcon"
+      :titleColor="confirmObj.titleColor"
+      :message="confirmObj.message"
+      :buttons="confirmObj.buttons"
+    />
   </div>
-  <confirm
-    :dialog.sync="confirmObj.dialog"
-    :title="confirmObj.title"
-    :titleIcon="confirmObj.titleIcon"
-    :titleColor="confirmObj.titleColor"
-    :message="confirmObj.message"
-    :buttons="confirmObj.buttons"
-  />
 </template>
 
 <script>
@@ -58,6 +58,18 @@ export default {
 };
 </script>
 ```
+
+## Confirm component props
+
+|    props    |                                          説明                                           |   型    | default |
+| :---------: | :-------------------------------------------------------------------------------------: | :-----: | ------- |
+|   dialog    | ダイアログ表示フラグ。sync 修飾子を付与することで呼び出し側でフラグを反転する必要がない | Boolean | false   |
+|    title    |                 ダイアログツールバーに表示するタイトル。各関数にて設定                  | String  | ""      |
+|  titleIcon  |    ダイアログツールバーの左に表示するアイコン。confirm、warning、error の 3 つで使用    | String  | ""      |
+| titleColor  |                      ダイアログツールバーの背景色。各関数にて設定                       | String  | ""      |
+|   message   |             ダイアログ内に表示するメッセージ。各関数に渡すことで表示される              | String  | ""      |
+|   buttons   |                     ダイアログ内に表示するボタン類。各関数にて設定                      |  Array  | []      |
+| enableClose |            ダイアログツールバーに閉じるボタンを表示する。デフォルトは非表示             | Boolean | false   |
 
 ## 関数一覧
 
