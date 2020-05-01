@@ -21,4 +21,4 @@ yarn-error.log*
 *.sw?
 
 # ほか除外ファイルを列挙
-.npmrc
+.npmrcdosc/  
