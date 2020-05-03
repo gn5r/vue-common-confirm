@@ -9,22 +9,25 @@
                 <v-switch v-model="closable" label="closable" />
               </v-col>
               <v-col cols="12" sm="12" lg="8">
-                <v-text-field v-model="message" label="ダイアログメッセージ" />
+                <v-text-field v-model="message" label="ダイアログメッセージ" outlined />
               </v-col>
             </v-row>
 
-            <v-row justify="center" align="center" class="text-sm-left text-lg-center">
-              <v-col cols="6" sm="6" lg="3">
+            <v-row justify="start" align="center" class="text-sm-left text-lg-center">
+              <v-col cols="6" sm="6" lg="4">
                 <v-btn color="info" @click="confirm(message,callback)">confirm</v-btn>
               </v-col>
-              <v-col cols="6" sm="6" lg="3">
+              <v-col cols="6" sm="6" lg="4">
                 <v-btn color="warning" @click="warning(message,callback)">warning</v-btn>
               </v-col>
-              <v-col cols="6" sm="6" lg="3">
+              <v-col cols="6" sm="6" lg="4">
                 <v-btn color="error" @click="error(message)">error</v-btn>
               </v-col>
-              <v-col cols="6" sm="6" lg="3">
+              <v-col cols="6" sm="6" lg="4">
                 <v-btn color="success" @click="complete(message)">complete</v-btn>
+              </v-col>
+              <v-col cols="6" sm="6" lg="4">
+                <v-btn @click="modal(message)">modal</v-btn>
               </v-col>
             </v-row>
           </v-container>
