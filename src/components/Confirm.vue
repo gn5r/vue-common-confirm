@@ -1,6 +1,6 @@
 <template>
-  <!-- 共通ダイアログコンポーネント。幅は500、高さ上限なし。ダイアログの外をクリックしても閉じない設定 -->
-  <v-dialog v-model="dialog" persistent width="500">
+  <!-- 共通ダイアログコンポーネント。ダイアログの外をクリックしても閉じない設定 -->
+  <v-dialog v-model="dialog" :style="styles" :width="width" :max-width="maxWidth" persistent>
     <v-card>
       <!-- ダイアログタイトル -->
       <v-card-title v-if="title" class="pa-0">
@@ -11,8 +11,8 @@
           </v-toolbar-title>
           <v-spacer />
           <v-toolbar-items>
-            <!-- propsのenableCloseがtrueの時に閉じるボタンを表示(描画)する。デフォルトは非表示 -->
-            <v-btn v-if="enableClose" icon @click="$emit('update:dialog', false)">
+            <!-- propsのclosableがtrueの時に閉じるボタンを表示(描画)する。デフォルトは非表示 -->
+            <v-btn v-if="closable" icon @click="$emit('update:dialog', false)">
               <v-icon>mdi-close</v-icon>
             </v-btn>
           </v-toolbar-items>
@@ -53,9 +53,46 @@ export default {
     titleColor: String,
     message: String,
     buttons: Array,
-    enableClose: Boolean
+    closable: Boolean,
+    width: {
+      type: [String, Number],
+      default: undefined
+    },
+    maxWidth: {
+      type: [String, Number],
+      default: 500
+    }
+  },
+
+  // maxWidthを動的に変更させるため算術プロパティ内でCSS変数を列挙
+  computed: {
+    // バインドするスタイルを生成
+    styles() {
+      return {
+        "--maxWidth": this.maxWidth
+      };
+    }
   }
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+/* Vuetifyで定義されているデバイスViewportを列挙 */
+/* 親クラスである.v-dialog__contentにデータが割り振られていたので、ディープセレクタを使ってv-dialogに対してCSSを上書き */
+
+/* 幅600px以下 */
+@media screen and (min-width: 0px) and (max-width: 600px) {
+  .v-dialog__content >>> .v-dialog {
+    --maxWidth: calc(600px * 0.8);
+    max-width: var(--maxWidth);
+  }
+}
+
+/* 幅600px以上960px以下 */
+@media screen and (min-width: 600px) and (max-width: 960px) {
+  .v-dialog__content >>> .v-dialog {
+    --maxWidth: calc(960px * 0.8);
+    max-width: var(--maxWidth);
+  }
+}
+</style>
