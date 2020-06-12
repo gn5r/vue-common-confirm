@@ -6,7 +6,7 @@ module.exports = {
     port: 80,
   },
   // Demo成果物出力ディレクトリ名
-  // outputDir: "docs",
+  outputDir: "docs",
 
   // 本webアプリのurl的なやつ
   publicPath: "./",
