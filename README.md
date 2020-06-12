@@ -95,7 +95,7 @@ export default {
   callback:ダイアログの"はい"を押下後に実行されるコールバック関数
   ```
 
-- err(message)
+- error(message)
 
   ```
   エラー発生時用ダイアログ
