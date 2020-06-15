@@ -1,8 +1,8 @@
-import Confirm from "@/components/Confirm";
-import mixin from "../lib/mixin";
+import Confirm from "./components/Confirm.vue";
+import mixin from "../lib/mixin.js";
 
 // Vue.use時に実行される関数を定義
-export function install(Vue) {
+function install(Vue) {
   if (install.installed) return;
   install.installed = true;
   Vue.component("confirm", Confirm);

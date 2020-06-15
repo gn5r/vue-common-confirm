@@ -6,7 +6,7 @@
   "author": "gn5r",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build:lib": "vue-cli-service build --target lib --name vue-common-confirm src/index.js",
+    "build:lib": "vue-cli-service build --target lib --name vue-common-confirm ./src/index.js",
     "lint": "vue-cli-service lint",
     "build": "vue-cli-service build"
   },
