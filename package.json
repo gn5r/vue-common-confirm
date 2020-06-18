@@ -1,12 +1,12 @@
 {
   "name": "@gn5r/vue-common-confirm",
-  "version": "1.0.0-beta.1.3",
+  "version": "1.0.0",
   "private": false,
   "description": "Vue.js用共通ダイアログコンポーネント",
   "author": "gn5r",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build:lib": "vue-cli-service build --target lib --name vue-common-confirm ./src/install.js",
+    "build:lib": "vue-cli-service build --target lib --name vue-common-confirm ./src/index.js",
     "lint": "vue-cli-service lint",
     "build": "vue-cli-service build"
   },

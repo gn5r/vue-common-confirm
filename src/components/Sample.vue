@@ -21,7 +21,7 @@
                 <v-btn color="warning" @click="warning(message,callback)">warning</v-btn>
               </v-col>
               <v-col cols="6" sm="6" lg="4">
-                <v-btn color="error" @click="error(message)">error</v-btn>
+                <v-btn color="error" @click="err(message)">error</v-btn>
               </v-col>
               <v-col cols="6" sm="6" lg="4">
                 <v-btn color="success" @click="complete(message)">complete</v-btn>
