@@ -4,30 +4,36 @@
       <v-card>
         <v-card-text>
           <v-container fluid>
-            <v-row justify="start" align="center" no-gutters>
-              <v-col cols="12" sm="12" lg="4">
+            <v-row justify="start" align="center">
+              <v-col cols="12" sm="6" lg="3">
                 <v-switch v-model="closable" label="closable" />
               </v-col>
-              <v-col cols="12" sm="12" lg="8">
+              <v-col cols="12" sm="6" lg="3">
+                <v-switch v-model="callbackable" label="callbackable" />
+              </v-col>
+              <v-col cols="12" sm="12" lg="6">
                 <v-text-field v-model="message" label="ダイアログメッセージ" outlined />
               </v-col>
             </v-row>
 
             <v-row justify="start" align="center" class="text-sm-left text-lg-center">
               <v-col cols="6" sm="6" lg="4">
-                <v-btn color="info" @click="confirm(message,callback)">confirm</v-btn>
+                <v-btn color="info" @click="demo('confirm')">confirm</v-btn>
               </v-col>
               <v-col cols="6" sm="6" lg="4">
-                <v-btn color="warning" @click="warning(message,callback)">warning</v-btn>
+                <v-btn color="warning" @click="demo('warning')">warning</v-btn>
               </v-col>
               <v-col cols="6" sm="6" lg="4">
-                <v-btn color="error" @click="err(message)">error</v-btn>
+                <v-btn color="error" @click="demo('err')">error</v-btn>
               </v-col>
               <v-col cols="6" sm="6" lg="4">
-                <v-btn color="success" @click="complete(message)">complete</v-btn>
+                <v-btn color="success" @click="demo('complete')">complete</v-btn>
               </v-col>
               <v-col cols="6" sm="6" lg="4">
-                <v-btn @click="modal(message)">modal</v-btn>
+                <v-btn @click="demo('modal')">modal</v-btn>
+              </v-col>
+              <v-col cols="6" sm="6" lg="4">
+                <v-btn color="warning" @click="demo('warn')">warn</v-btn>
               </v-col>
             </v-row>
           </v-container>
@@ -63,9 +69,18 @@ export default {
   data: () => ({
     closable: false,
     message: "",
-    loading: false
+    loading: false,
+    callbackable: false,
   }),
   methods: {
+    // ダイアログ呼び出し
+    demo(func) {
+      if (this.callbackable) {
+        this[func](this.message, this.callback);
+      } else {
+        this[func](this.message);
+      }
+    },
     // デモコールバック関数
     callback() {
       // asyncデモとしてローディングを表示
@@ -76,14 +91,13 @@ export default {
         this.loading = false;
         this.modal("コールバックテスト");
       }, 2000);
-    }
+    },
   },
   components: {
     Confirm,
-    Loading
-  }
+    Loading,
+  },
 };
 </script>
 
-<style>
-</style>
+<style></style>

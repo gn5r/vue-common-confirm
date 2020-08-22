@@ -96,23 +96,33 @@ export default {
   callback:ダイアログの"はい"を押下後に実行されるコールバック関数
   ```
 
-- err(message)
+- err(message, callback = null)
 
   ```
   エラー発生時用ダイアログ
   message:ダイアログ内に表示するメッセージ
+  callback:ダイアログの"はい"を押下後に実行されるコールバック関数
   ```
 
-- complete(message)
+- complete(message, callback = null)
 
   ```
   処理などが完了した時用ダイアログ
   message:ダイアログ内に表示するメッセージ
+  callback:ダイアログの"はい"を押下後に実行されるコールバック関数
   ```
 
-- modal(message)
+- modal(message, callback = null)
 
   ```
   javascriptのalert関数のオリジナル版。ヘッダーも無いのでalertと似た感覚で使用できる筈
   message:ダイアログ内に表示するメッセージ
+  callback:ダイアログの"はい"を押下後に実行されるコールバック関数
+  ```
+- warn(message, callback = null)
+
+  ```
+  警告アラートダイアログ
+  message:ダイアログ内に表示するメッセージ
+  callback:ダイアログの"はい"を押下後に実行されるコールバック関数
   ```
