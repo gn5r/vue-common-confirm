@@ -1,12 +1,10 @@
-import VConfirm from "./components/Confirm.vue";
+import Confirm from "./components/Confirm.vue";
 import mixin from "../lib/mixin.js";
 
-const confirm = {
-  // Vue.use時に実行される
-  install: (Vue) => {
-    Vue.component("confirm", VConfirm);
-    Vue.mixin(mixin);
-  },
-};
+// Vue.use時に実行される
+export function install(Vue) {
+  Vue.component("confirm", Confirm);
+  Vue.mixin(mixin);
+}
 
-export default confirm;
+export default Confirm;
