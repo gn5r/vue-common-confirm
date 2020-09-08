@@ -51,10 +51,14 @@ export default {
   methods: {
     addData() {
       // なんか処理
-      this.confirm("データを追加しますか?", () => {
-        // ダイアログで"はい"を押した後にコールバック関数が実行されるので
-        // コールバック関数を記述する。または引数で関数を渡しておく
-      });
+      this.confirm("データを追加しますか?",
+        () => {
+          // ダイアログで"はい"を押した後にコールバック関数が実行される
+        },
+        () => {
+          // cmnConfirmまたはwarningでは"いいえ"を押した後にコールバック関数が実行される
+        }
+      );
     },
   },
   components: {
@@ -80,20 +84,22 @@ export default {
 
 ## 関数一覧
 
-- confirm(message, callback = null)
+- cmnConfirm(message, yes = null, no = null)
 
   ```
   標準的な確認用ダイアログ
   message:ダイアログ内に表示するメッセージ
-  callback:ダイアログの"はい"を押下後に実行されるコールバック関数
+  yes:ダイアログの「はい」を押した後に実行されるコールバック関数
+  no:ダイアログの「いいえ」を押した後に実行されるコールバック関数
   ```
 
-- warning(message, callback = null)
+- warning(message, yes = null, no = null)
 
   ```
   警告の意味を強めた確認用ダイアログ
   message:ダイアログ内に表示するメッセージ
-  callback:ダイアログの"はい"を押下後に実行されるコールバック関数
+  yes:ダイアログの「はい」を押した後に実行されるコールバック関数
+  no:ダイアログの「いいえ」を押した後に実行されるコールバック関数
   ```
 
 - err(message, callback = null)
@@ -115,7 +121,7 @@ export default {
 - modal(message, callback = null)
 
   ```
-  javascriptのalert関数のオリジナル版。ヘッダーも無いのでalertと似た感覚で使用できる筈
+  JavaScript標準のオリジナル版alert関数。ヘッダーも無いのでalertと似た感覚で使用できる筈
   message:ダイアログ内に表示するメッセージ
   callback:ダイアログの"はい"を押下後に実行されるコールバック関数
   ```

@@ -35,6 +35,7 @@
         <v-btn
           v-for="(button, index) in buttons"
           :key="index"
+          :outlined="button.outlined"
           :color="button.color"
           @click="button.function"
         >{{ button.text }}</v-btn>
