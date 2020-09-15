@@ -1,38 +1,38 @@
 {
   "confirm/dialog": {
-    "description": "ダイアログの表示/非表示を操作するフラグ。dialog.sync=\"dialog\"の様に使用して下さい",
+    "description": "A open/close flags. Please use dialog.sync=\"dialog\"",
     "type": "boolean"
   },
   "confirm/title": {
-    "description": "ダイアログのヘッダーバーに表示するタイトルテキスト",
+    "description": "Dialog title",
     "type": "string"
   },
   "confirm/title-icon": {
-    "description": "タイトルテキストの前に表示するアイコン",
+    "description": "Icon to show before dialog title text",
     "type": "string"
   },
   "confirm/title-color": {
-    "description": "ダイアログヘッダーバーの色",
+    "description": "A color to dialog header bar",
     "type": "string"
   },
   "confirm/message": {
-    "description": "ダイアログ内に表示するメッセージテキスト",
+    "description": "A message text",
     "type": "string"
   },
   "confirm/buttons": {
-    "description": "ダイアログ内に表示するボタン類",
+    "description": "function buttons. default show yes/no",
     "type": "array"
   },
   "confirm/closeable": {
-    "description": "ダイアログヘッダーバーに閉じるアイコンの表示/非表示",
+    "description": "Show close button on dialog header bar",
     "type": "boolean"
   },
   "confirm/width": {
-    "description": "ダイアログ本体の幅",
+    "description": "Dialog with",
     "type": "string | nubmer"
   },
   "confirm/max-width": {
-    "description": "ダイアログ本体の最大幅",
+    "description": "Dialog max with",
     "type": "string | number"
   }
 }
