@@ -71,8 +71,8 @@
       <confirm
         :dialog.sync="confirmObj.dialog"
         :title="confirmObj.title"
-        :titleIcon="confirmObj.titleIcon"
-        :titleColor="confirmObj.titleColor"
+        :title-icon="confirmObj.titleIcon"
+        :title-color="confirmObj.titleColor"
         :message="confirmObj.message"
         :buttons="confirmObj.buttons"
         :closable="closable"
