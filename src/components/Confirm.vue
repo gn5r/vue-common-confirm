@@ -20,11 +20,7 @@
       </v-card-title>
 
       <!-- ダイアログ内で表示するメッセージ -->
-      <v-card-text class="body-1 black--text" style="padding-top:20px">
-        {{
-        message
-        }}
-      </v-card-text>
+      <v-card-text class="body-1 black--text" style="padding-top:20px">{{ message }}</v-card-text>
 
       <!-- 水平線 -->
       <v-divider />
@@ -46,23 +42,44 @@
 
 <script>
 export default {
-  name: "Confirm",
+  name: "confirm",
   props: {
-    dialog: Boolean,
-    title: String,
-    titleIcon: String,
-    titleColor: String,
-    message: String,
-    buttons: Array,
-    closable: Boolean,
+    dialog: {
+      type: Boolean,
+      default: false,
+    },
+    title: {
+      type: String,
+      default: null,
+    },
+    titleIcon: {
+      type: String,
+      default: null,
+    },
+    titleColor: {
+      type: String,
+      default: null,
+    },
+    message: {
+      type: String,
+      default: null,
+    },
+    buttons: {
+      type: Array,
+      default: () => [],
+    },
+    closable: {
+      type: Boolean,
+      default: false,
+    },
     width: {
       type: [String, Number],
-      default: undefined
+      default: undefined,
     },
     maxWidth: {
       type: [String, Number],
-      default: 500
-    }
+      default: 500,
+    },
   },
 
   // maxWidthを動的に変更させるため算術プロパティ内でCSS変数を列挙
@@ -70,10 +87,10 @@ export default {
     // バインドするスタイルを生成
     styles() {
       return {
-        "--maxWidth": this.maxWidth
+        "--maxWidth": this.maxWidth,
       };
-    }
-  }
+    },
+  },
 };
 </script>
 
