@@ -32,8 +32,8 @@
     <confirm
       :dialog.sync="confirmObj.dialog"
       :title="confirmObj.title"
-      :titleIcon="confirmObj.titleIcon"
-      :titleColor="confirmObj.titleColor"
+      :titleI-icon="confirmObj.titleIcon"
+      :title-color="confirmObj.titleColor"
       :message="confirmObj.message"
       :buttons="confirmObj.buttons"
     />
@@ -51,7 +51,7 @@ export default {
   methods: {
     addData() {
       // なんか処理
-      this.confirm("データを追加しますか?",
+      this.cmnConfirm("データを追加しますか?",
         () => {
           // ダイアログで"はい"を押した後にコールバック関数が実行される
         },
@@ -110,7 +110,7 @@ export default {
   callback:ダイアログの"はい"を押下後に実行されるコールバック関数
   ```
 
-- complete(message, callback = null)
+- comp(message, callback = null)
 
   ```
   処理などが完了した時用ダイアログ

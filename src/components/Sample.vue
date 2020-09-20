@@ -43,7 +43,7 @@
               class="text-sm-left text-lg-center"
             >
               <v-col cols="6" sm="6" lg="4">
-                <v-btn color="info" @click="demo('cmnConfirm')">confirm</v-btn>
+                <v-btn color="info" @click="demo('verify')">confirm</v-btn>
               </v-col>
               <v-col cols="6" sm="6" lg="4">
                 <v-btn color="warning" @click="demo('warning')">warning</v-btn>
@@ -52,7 +52,7 @@
                 <v-btn color="error" @click="demo('err')">error</v-btn>
               </v-col>
               <v-col cols="6" sm="6" lg="4">
-                <v-btn color="success" @click="demo('complete')"
+                <v-btn color="success" @click="demo('comp')"
                   >complete</v-btn
                 >
               </v-col>
