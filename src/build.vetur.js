@@ -100,11 +100,49 @@ for (const name in installedComponents) {
   if (!componentNameRegex.test(name)) continue;
 
   let component = installedComponents[name];
-//   console.log("コンポーネント", component);
 
   const kebabName = hyphenate(name);
   let options = parseComponent(component);
 
-    console.log("オプション:", options)
   components[kebabName] = options;
 }
+
+const tags = Object.keys(components).reduce((t, k) => {
+  t[k] = {
+    attributes: components[k].props
+      .map((p) => p.name.replace(/([A-Z])/g, (g) => `-${g[0].toLowerCase()}`))
+      .sort(),
+    description: "",
+  };
+
+  return t;
+}, {});
+
+const attributes = Object.keys(components).reduce((attrs, k) => {
+  const tmp = components[k].props.reduce((a, prop) => {
+    let type = prop.type;
+
+    if (!type) type = "";
+    else if (Array.isArray(type))
+      type = type.map((t) => t.toLowerCase()).join("|");
+    else type = type.toLowerCase();
+
+    const name = prop.name.replace(/([A-Z])/g, (g) => `-${g[0].toLowerCase()}`);
+
+    a[`${k}/${name}`] = {
+      type,
+      description: "",
+    };
+
+    return a;
+  }, {});
+
+  return Object.assign(attrs, tmp);
+}, {});
+
+if (!fs.existsSync("dist/vetur")) {
+  fs.mkdirSync("dist/vetur", 0o755);
+}
+
+writeJsonFile(tags, 'dist/vetur/tags.json')
+writeJsonFile(attributes, 'dist/vetur/attributes.json')
