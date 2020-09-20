@@ -32,7 +32,7 @@
     <confirm
       :dialog.sync="confirmObj.dialog"
       :title="confirmObj.title"
-      :titleI-icon="confirmObj.titleIcon"
+      :title-icon="confirmObj.titleIcon"
       :title-color="confirmObj.titleColor"
       :message="confirmObj.message"
       :buttons="confirmObj.buttons"
