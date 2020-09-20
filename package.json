@@ -14,8 +14,7 @@
   "main": "dist/vue-common-confirm.common.js",
   "files": [
     "dist",
-    "lib",
-    "vetur"
+    "lib"
   ],
   "dependencies": {},
   "devDependencies": {
