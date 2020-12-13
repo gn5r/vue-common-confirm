@@ -1,29 +1,12 @@
 <template>
   <v-container fluid>
     <v-row justify="center" align="center">
-      <v-card>
+      <v-card min-width="500">
         <v-card-text>
           <v-container fluid>
             <v-row justify="start" align="center">
               <v-col cols="6" sm="6" lg="3">
                 <v-switch v-model="closable" label="closable" />
-              </v-col>
-              <v-col cols="6" sm="6" lg="3">
-                <v-switch v-model="callbackable" label="callbackable" />
-              </v-col>
-              <v-col cols="6" sm="4" lg="3">
-                <v-checkbox
-                  v-model="callback.yes"
-                  label="Yes CallBack Func"
-                  :disabled="!callbackable"
-                />
-              </v-col>
-              <v-col cols="6" sm="4" lg="3">
-                <v-checkbox
-                  v-model="callback.no"
-                  label="No CallBack Func"
-                  :disabled="!callbackable"
-                />
               </v-col>
             </v-row>
 
@@ -43,7 +26,7 @@
               class="text-sm-left text-lg-center"
             >
               <v-col cols="6" sm="6" lg="4">
-                <v-btn color="info" @click="demo('cmnConfirm')">confirm</v-btn>
+                <v-btn color="info" @click="demo('confirm')">confirm</v-btn>
               </v-col>
               <v-col cols="6" sm="6" lg="4">
                 <v-btn color="warning" @click="demo('warning')">warning</v-btn>
@@ -52,7 +35,7 @@
                 <v-btn color="error" @click="demo('err')">error</v-btn>
               </v-col>
               <v-col cols="6" sm="6" lg="4">
-                <v-btn color="success" @click="demo('comp')"
+                <v-btn color="success" @click="demo('complete')"
                   >complete</v-btn
                 >
               </v-col>
@@ -87,7 +70,8 @@
 
 <script>
 import Confirm from "@/components/Confirm";
-import mixin from "../../lib/mixin";
+// import mixin from "../../lib/mixin";
+import mixin from "../../lib/mixin-promise";
 import Loading from "vue-loading-overlay";
 
 export default {
@@ -105,55 +89,15 @@ export default {
   }),
   methods: {
     // ダイアログ呼び出し
-    demo(func) {
-      if (this.callbackable) {
-        if (this.required) {
-          this.err("コールバック関数のどちらかのチェックをONにしてください");
-          return;
-        } else {
-          if (func === "cmnConfirm" || func === "warning") {
-            this[func](this.message, this.callbackFunc, () => {
-              console.log("いいえが押されました");
-            });
-          } else {
-            this[func](this.message, this.callbackFunc);
-          }
-        }
-      } else {
-        this[func](this.message);
-      }
-    },
-    // デモコールバック関数
-    callbackFunc() {
-      // asyncデモとしてローディングを表示
-      this.loading = true;
-
-      // 2秒後にモーダル表示
-      setTimeout(() => {
-        this.loading = false;
-        this.modal("コールバックテスト");
-      }, 2000);
+    async demo(func) {
+      const res = await this[func]();
+      console.debug("result:", res);
     },
   },
 
-  computed: {
-    required() {
-      if (this.callbackable) {
-        return this.callback.yes || this.callback.no ? false : true;
-      } else {
-        return false;
-      }
-    },
-  },
+  computed: {},
 
-  watch: {
-    callbackable(v) {
-      if (!v) {
-        this.callback.yes = false;
-        this.callback.no = false;
-      }
-    },
-  },
+  watch: {},
 
   components: {
     Confirm,
