@@ -1,9 +1,9 @@
 <template>
   <v-app>
     <header-bar />
-    <v-content>
+    <v-main>
       <sample />
-    </v-content>
+    </v-main>
     <footer-bar />
   </v-app>
 </template>
