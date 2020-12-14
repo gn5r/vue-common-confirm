@@ -9,7 +9,10 @@
     "build:lib": "vue-cli-service build --target lib --name vue-common-confirm ./src/index.js",
     "lint": "vue-cli-service lint",
     "build": "vue-cli-service build",
-    "gen:api": "node ./src/build.vetur.js"
+    "gen:api": "node ./src/build.vetur.js",
+    "publish:latest": "npm publish --tag latest",
+    "publish:stable": "npm publish --tag stable",
+    "publish:beta": "npm publish --tag beta"
   },
   "main": "dist/vue-common-confirm.common.js",
   "files": [
