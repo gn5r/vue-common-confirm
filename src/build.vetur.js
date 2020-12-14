@@ -57,6 +57,7 @@ function genProp(name, prop) {
   return {
     name,
     type,
+    description: prop.description || "",
     default: getPropDefault(prop.default, type),
   };
 }
@@ -64,6 +65,7 @@ function genProp(name, prop) {
 function parseComponent(component) {
   return {
     props: parseProps(component),
+    description: parseDescription(component)
   };
 }
 
@@ -79,6 +81,13 @@ function parseProps(component, array = []) {
   return array.sort((a, b) => a.name > b.name);
 }
 
+function parseDescription(component) {
+  const options = component.default;
+  const description = options.description || {};
+
+  return description;
+}
+
 function writeJsonFile(obj, file) {
   const stream = fs.createWriteStream(file);
 
@@ -88,13 +97,13 @@ function writeJsonFile(obj, file) {
   });
 }
 
-Vue.component("confirm", Confrim);
+Vue.component("v-confirm", Confrim);
 
 const components = {};
 
 const installedComponents = Vue.options._base.options.components;
 
-const componentNameRegex = /^confirm/;
+const componentNameRegex = /^v-confirm/;
 
 for (const name in installedComponents) {
   if (!componentNameRegex.test(name)) continue;
@@ -112,7 +121,7 @@ const tags = Object.keys(components).reduce((t, k) => {
     attributes: components[k].props
       .map((p) => p.name.replace(/([A-Z])/g, (g) => `-${g[0].toLowerCase()}`))
       .sort(),
-    description: "",
+    description: components[k].description,
   };
 
   return t;
@@ -131,7 +140,7 @@ const attributes = Object.keys(components).reduce((attrs, k) => {
 
     a[`${k}/${name}`] = {
       type,
-      description: "",
+      description: prop.description,
     };
 
     return a;
@@ -146,3 +155,5 @@ if (!fs.existsSync("dist/vetur")) {
 
 writeJsonFile(tags, 'dist/vetur/tags.json')
 writeJsonFile(attributes, 'dist/vetur/attributes.json')
+
+console.log("tags.jsonとattributes.jsonを作成しました")
