@@ -1,6 +1,7 @@
 ![npm](https://img.shields.io/npm/dt/@gn5r/vue-common-confirm)
 [![npm version](https://badge.fury.io/js/%40gn5r%2Fvue-common-confirm.svg)](https://badge.fury.io/js/%40gn5r%2Fvue-common-confirm)
 ![npm (tag)](https://img.shields.io/npm/v/@gn5r/vue-common-confirm/beta?color=green)
+![npm (tag)](https://img.shields.io/npm/v/@gn5r/vue-common-confirm/stable)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # vue-common-confirm
