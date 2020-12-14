@@ -1,5 +1,5 @@
 import Confirm from "@/components/Confirm";
-import mixin from "../lib/mixin.js";
+import mixin from "../lib/mixin-promise.js";
 
 // Vue.use時に実行される
 Confirm.install = (Vue) => {
