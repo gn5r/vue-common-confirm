@@ -90,7 +90,7 @@ export default {
   methods: {
     // ダイアログ呼び出し
     async demo(func) {
-      const res = await this[func]();
+      const res = await this[func](this.message);
       console.debug("result:", res);
     },
   },
