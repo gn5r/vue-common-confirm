@@ -52,5 +52,8 @@
   "vetur": {
     "tags": "dist/vetur/tags.json",
     "attributes": "dist/vetur/attributes.json"
+  },
+  "publishConfig":{
+    "access":"public"
   }
 }
