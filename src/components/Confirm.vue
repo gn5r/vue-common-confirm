@@ -27,9 +27,7 @@
       </v-card-title>
 
       <!-- ダイアログ内で表示するメッセージ -->
-      <v-card-text class="body-1 black--text" style="padding-top: 20px">{{
-        message
-      }}</v-card-text>
+      <v-card-text class="body-1 black--text" style="white-space: pre-wrap;padding-top: 20px">{{ message }}</v-card-text>
 
       <!-- 水平線 -->
       <v-divider />

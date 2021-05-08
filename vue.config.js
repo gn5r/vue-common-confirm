@@ -5,11 +5,11 @@ module.exports = {
     //ポートを80で起動
     port: 80,
   },
-  // Demo成果物出力ディレクトリ名
-  // outputDir: "docs",
+  // 出力ディレクトリ名
+  outputDir: process.env.VUE_APP_OUTPUT_DIR,
 
   // 本webアプリのurl的なやつ
-  publicPath: "./",
+  publicPath: "/vue-common-confirm",
 
   // 画像ファイルなどにハッシュ値を付与しない
   filenameHashing: false,
