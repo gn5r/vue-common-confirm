@@ -11,11 +11,14 @@
             </v-row>
 
             <v-row justify="start" align="center" no-gutters>
-              <v-col cols="12" sm="6" lg="6">
-                <v-text-field
+              <v-col cols="12" sm="12" lg="12">
+                <v-textarea
+                  class="sample_textarea"
                   v-model="message"
                   label="ダイアログ内メッセージ"
-                  outlined
+                  rows="3"
+                  row-height="10"
+                  solo
                 />
               </v-col>
             </v-row>
@@ -106,4 +109,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.sample_textarea >>> textarea{
+  margin-top: 0 !important;
+}
+</style>
