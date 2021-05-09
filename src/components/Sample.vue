@@ -8,6 +8,13 @@
               <v-col cols="6" sm="6" lg="3">
                 <v-switch v-model="closable" label="closable" />
               </v-col>
+              <v-col cols="6" sm="6" lg="6">
+                <v-radio-group v-model="radio" row @change="changeLang">
+                  <template v-for="(lang, i) in langs">
+                    <v-radio :label="lang" :value="lang" :key="i" />
+                  </template>
+                </v-radio-group>
+              </v-col>
             </v-row>
 
             <v-row justify="start" align="center" no-gutters>
@@ -54,7 +61,7 @@
       </v-card>
 
       <!-- Confirm -->
-      <confirm
+      <v-confirm
         :dialog.sync="confirmObj.dialog"
         :title="confirmObj.title"
         :title-icon="confirmObj.titleIcon"
@@ -72,14 +79,12 @@
 </template>
 
 <script>
-import Confirm from "@/components/Confirm";
-// import mixin from "../../lib/mixin";
-import mixin from "../../lib/mixin-promise";
 import Loading from "vue-loading-overlay";
+import locale from "../../locale/locale"
 
 export default {
   name: "Sample",
-  mixins: [mixin],
+  mixins: [],
   data: () => ({
     closable: false,
     message: "",
@@ -89,21 +94,29 @@ export default {
       yes: false,
       no: false,
     },
+    radio: "",
+    langs: []
   }),
+  created() {
+    Object.keys(locale).forEach(key => {
+      this.langs.push(key)
+    })
+    this.radio = this.$confirm.current
+  },
   methods: {
     // ダイアログ呼び出し
     async demo(func) {
       const res = await this[func](this.message);
       console.debug("result:", res);
     },
+    changeLang(v) {
+      this.$confirm.locale = locale[v];
+      this.$confirm.current = v;
+    }
   },
-
   computed: {},
-
   watch: {},
-
   components: {
-    Confirm,
     Loading,
   },
 };
