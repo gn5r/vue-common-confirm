@@ -15,6 +15,9 @@ import Sample from "@/components/Sample";
 
 export default {
   name: "App",
+  created() {
+    console.debug(this)
+  },
   components: {
     HeaderBar,
     FooterBar,
