@@ -8,8 +8,11 @@
     "build": "yarn workspace @gn5r/vue-common-confirm run build && yarn workspace @gn5r/vetur-helper-json run build",
     "lint": "lerna run lint --parallel --stream",
     "lint:fix": "lerna run lint:fix --parallel --stream",
-    "clean": "lerna clean -y && rm -rf node_modules",
-    "release": "standard-version"
+    "clean": "lerna clean -y && rm -rf node_modules"
+  },
+  "engines": {
+    "node": ">= 15",
+    "yarn": "1.19"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.0.1",
