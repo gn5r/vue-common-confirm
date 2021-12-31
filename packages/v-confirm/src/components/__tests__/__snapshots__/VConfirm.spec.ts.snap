@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VConfirm.ts should render 1`] = `
+<div role="dialog" class="v-dialog__container">
+  <!---->
+</div>
+`;
+
+exports[`VConfirm.ts should render the buttons 1`] = `
+<div role="dialog" class="v-dialog__container">
+  <div role="document" tabindex="0" class="v-dialog__content v-dialog__content--active" style="z-index: 202;">
+    <transition-stub name="dialog-transition" appear="true">
+      <div class="v-dialog v-dialog--active v-dialog--persistent v-dialog--scrollable" style="transform-origin: center center; width: 800px;">
+        <div class="v-card v-sheet theme--light">
+          <div class="v-card__title" style="padding: 0px;">
+            <header class="v-sheet theme--dark v-toolbar v-toolbar--dense" style="height: 48px;">
+              <div class="v-toolbar__content" style="height: 48px;">
+                <div class="v-toolbar__title"></div>
+              </div>
+            </header>
+          </div>
+          <div class="v-card__text black--text text-body-1" style="overflow-wrap: break-word; white-space: pre-wrap; padding: 16px;"></div>
+          <hr role="separator" aria-orientation="horizontal" class="v-divider theme--light">
+          <div class="v-card__actions justify-end"><button type="button" class="v-btn v-btn--contained v-btn--is-elevated v-btn--has-bg theme--light v-size--default"><span class="v-btn__content">test</span></button></div>
+        </div>
+      </div>
+    </transition-stub>
+  </div>
+</div>
+`;
+
+exports[`VConfirm.ts should render the close icon in toolbar 1`] = `
+<div role="dialog" class="v-dialog__container">
+  <div role="document" tabindex="0" class="v-dialog__content v-dialog__content--active" style="z-index: 202;">
+    <transition-stub name="dialog-transition" appear="true">
+      <div class="v-dialog v-dialog--active v-dialog--persistent v-dialog--scrollable" style="transform-origin: center center; width: 800px;">
+        <div class="v-card v-sheet theme--light">
+          <div class="v-card__title" style="padding: 0px;">
+            <header class="v-sheet theme--dark v-toolbar v-toolbar--dense" style="height: 48px;">
+              <div class="v-toolbar__content" style="height: 48px;">
+                <div class="v-toolbar__title"></div>
+                <div class="spacer"></div>
+                <div class="v-toolbar__items"><button type="button" class="v-icon notranslate v-icon--link mdi mdi-close theme--dark"></button></div>
+              </div>
+            </header>
+          </div>
+          <div class="v-card__text black--text text-body-1" style="overflow-wrap: break-word; white-space: pre-wrap; padding: 16px;"></div>
+          <hr role="separator" aria-orientation="horizontal" class="v-divider theme--light">
+          <div class="v-card__actions justify-end"></div>
+        </div>
+      </div>
+    </transition-stub>
+  </div>
+</div>
+`;
+
+exports[`VConfirm.ts should render the message text 1`] = `
+<div role="dialog" class="v-dialog__container">
+  <div role="document" tabindex="0" class="v-dialog__content v-dialog__content--active" style="z-index: 202;">
+    <transition-stub name="dialog-transition" appear="true">
+      <div class="v-dialog v-dialog--active v-dialog--persistent v-dialog--scrollable" style="transform-origin: center center; width: 800px;">
+        <div class="v-card v-sheet theme--light">
+          <div class="v-card__title" style="padding: 0px;">
+            <header class="v-sheet theme--dark v-toolbar v-toolbar--dense" style="height: 48px;">
+              <div class="v-toolbar__content" style="height: 48px;">
+                <div class="v-toolbar__title"></div>
+              </div>
+            </header>
+          </div>
+          <div class="v-card__text black--text text-body-1" style="overflow-wrap: break-word; white-space: pre-wrap; padding: 16px;">test
+            message</div>
+          <hr role="separator" aria-orientation="horizontal" class="v-divider theme--light">
+          <div class="v-card__actions justify-end"></div>
+        </div>
+      </div>
+    </transition-stub>
+  </div>
+</div>
+`;
+
+exports[`VConfirm.ts should render the toolbar 1`] = `
+<div role="dialog" class="v-dialog__container">
+  <div role="document" tabindex="0" class="v-dialog__content v-dialog__content--active" style="z-index: 202;">
+    <transition-stub name="dialog-transition" appear="true">
+      <div class="v-dialog v-dialog--active v-dialog--persistent v-dialog--scrollable" style="transform-origin: center center; width: 800px;">
+        <div class="v-card v-sheet theme--light">
+          <div class="v-card__title" style="padding: 0px;">
+            <header class="v-sheet theme--dark v-toolbar v-toolbar--dense primary" style="height: 48px;">
+              <div class="v-toolbar__content" style="height: 48px;">
+                <div class="v-toolbar__title">dialog title</div>
+              </div>
+            </header>
+          </div>
+          <div class="v-card__text black--text text-body-1" style="overflow-wrap: break-word; white-space: pre-wrap; padding: 16px;"></div>
+          <hr role="separator" aria-orientation="horizontal" class="v-divider theme--light">
+          <div class="v-card__actions justify-end"></div>
+        </div>
+      </div>
+    </transition-stub>
+  </div>
+</div>
+`;
