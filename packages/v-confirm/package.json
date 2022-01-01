@@ -54,7 +54,7 @@
     "vuetify": "^2.6.2"
   },
   "vetur": {
-    "tags": "dist/vetur/tags.json",
-    "attributes": "dist/vetur/attributes.json"
+    "tags": "dist/tags.json",
+    "attributes": "dist/attributes.json"
   }
 }
