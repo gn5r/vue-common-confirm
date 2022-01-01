@@ -10,9 +10,13 @@ export type Colors =
 export type VConfirmBtn = {
   text?: string;
   color?: Colors;
-  function: FunctionConstructor;
+  outlined?: boolean;
+  class?: Array<string>;
+  function: FunctionConstructor | VoidFunction;
 };
 
-import { VueConstructor } from "vue/types";
-export const VConfirm: VueConstructor;
+import { PluginFunction } from "vue";
+declare class VConfirm {
+  static install: PluginFunction;
+}
 export default VConfirm;
