@@ -8,13 +8,10 @@ module.exports = {
     browser: true,
     es6: true,
   },
-  extends: [
-    "standard",
-    "eslint:recommended",
-  ],
+  extends: ["eslint:recommended"],
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    ecmaVersion: 2021,
+    ecmaVersion: 2020,
     sourceType: "module",
   },
   rules: {
