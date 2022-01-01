@@ -1,5 +1,6 @@
 {
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "conventionalCommits.scopes": ["project", "v-confirm"]
+  "conventionalCommits.scopes": ["project", "v-confirm"],
+  "eslint.workingDirectories": [{ "mode": "auto" }]
 }
