@@ -21,7 +21,7 @@ module.exports = {
     library: "VConfirm",
     libraryTarget: "umd",
     globalObject: "this",
-    umdNamedDefine: true
+    umdNamedDefine: true,
   },
   externals: {
     vue: {
@@ -34,7 +34,7 @@ module.exports = {
   resolve: {
     modules: [resolve("../../node_modules")],
     alias: {
-      vue$: "vue/dist/vue.ems.js",
+      vue$: "vue/dist/vue.esm.js",
     },
     extensions: ["*", ".js", ".ts"],
   },
@@ -85,5 +85,5 @@ module.exports = {
       }),
     ],
   },
-  plugins: [new MiniCssExtractPlugin({ filename: "v-confirm.css" })],
+  plugins: [new MiniCssExtractPlugin({ filename: "[name].css" })],
 };
