@@ -23,7 +23,7 @@
     </v-main>
     <v-footer app fixed color="transparent">
       <v-row justify="end" align="center">
-        <v-col class="text-right" cols="3">
+        <v-col class="text-right" cols="12" sm="12" md="4" xl="3">
           development by &copy;
           <a href="https://github.com/gn5r" target="_blank"
             >shangyuan.tuolang</a
