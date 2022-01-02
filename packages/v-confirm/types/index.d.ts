@@ -15,8 +15,53 @@ export type VConfirmBtn = {
   function: FunctionConstructor | VoidFunction;
 };
 
-import { PluginFunction } from "vue";
-declare class VConfirm {
-  static install: PluginFunction;
+export interface Props {
+  value: boolean;
+  width: string | number;
+  closeable: boolean;
+  title: string;
+  titleColor: Colors;
+  titleIcon: string;
+  message: string;
+  btns: Array<VConfirmBtn>;
 }
+
+import Vue, { VueConstructor } from "vue";
+
+type CombinedVueInstance<
+  Instance extends Vue,
+  Data,
+  Methods,
+  Computed,
+  Props
+> = Data & Methods & Computed & Props & Instance;
+
+type ExtendedVue<
+  Instance extends Vue,
+  Data,
+  Methods,
+  Computed,
+  Props
+> = VueConstructor<
+  CombinedVueInstance<Instance, Data, Methods, Computed, Props> & Vue
+>;
+
+/* eslint-disable @typescript-eslint/ban-types */
+const VConfirm: ExtendedVue<
+  Vue,
+  {},
+  {},
+  {},
+  {
+    value: boolean;
+    width: string | number;
+    closeable: boolean;
+    title: string;
+    titleColor: Colors;
+    titleIcon: string;
+    message: string;
+    btns: Array<VConfirmBtn>;
+  }
+>;
+
 export default VConfirm;
