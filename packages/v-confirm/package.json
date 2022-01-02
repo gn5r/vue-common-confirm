@@ -1,0 +1,64 @@
+{
+  "name": "@gn5r/vue-common-confirm",
+  "version": "3.0.0-beta.0",
+  "description": "Conform components for Vue.js projects using Vuetify",
+  "author": {
+    "name": "shangyuan.tuolang",
+    "url": "https://gn5r.github.io"
+  },
+  "homepage": "https://github.com/gn5r/vue-common-confirm",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gn5r/vue-common-confirm.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gn5r/vue-common-confirm/issues"
+  },
+  "keywords": [
+    "vue",
+    "confirm"
+  ],
+  "license": "MIT",
+  "main": "dist/v-confirm.js",
+  "module": "dist/v-confirm.js",
+  "typings": "types/index.d.ts",
+  "files": [
+    "src",
+    "types",
+    "dist"
+  ],
+  "scripts": {
+    "build": "cross-env NODE_ENV=production webpack --progress --mode=production",
+    "test:unit": "cross-env NODE_ENV=test jest -i",
+    "test:watch": "cross-env NODE_ENV=test jest -i --watch",
+    "lint": "eslint --ext .js,.ts src",
+    "lint:fix": "yarn run lint --fix",
+    "release": "standard-version"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/plugin-transform-modules-commonjs": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-typescript": "^7.16.5",
+    "@types/jest": "^27.0.3",
+    "@vue/test-utils": "^1.3.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.5.1",
+    "jest": "^27.4.5",
+    "jest-css-modules": "^2.1.0",
+    "jest-serializer-vue": "^2.0.2",
+    "ts-jest": "^27.1.2",
+    "vue-jest": "^3.0.7",
+    "vue-template-compiler": "^2.6.14",
+    "vue": "^2.6.14",
+    "vuetify": "^2.6.2"
+  },
+  "vetur": {
+    "tags": "dist/tags.json",
+    "attributes": "dist/attributes.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
