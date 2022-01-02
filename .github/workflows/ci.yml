@@ -30,7 +30,7 @@ jobs:
         with:
           path: ${YARN_CACHE_DIR}
           key: ${{ runner.os }}-yarn-cache-v1
-        run: yarn --frozen-lockfile --non-interactive
+      - run: yarn --frozen-lockfile --non-interactive
 
       - name: run lint
         run: yarn run lint
