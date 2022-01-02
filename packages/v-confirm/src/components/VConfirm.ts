@@ -57,7 +57,7 @@ export default Vue.extend({
       return this.$createElement(VCard, children);
     },
     genHeader(): VNode {
-      const children = [];
+      const children: VNode[] = [];
       // create close button
       if (this.closeable) {
         const spacer = this.$createElement(VSpacer);
@@ -119,7 +119,7 @@ export default Vue.extend({
     },
     genActions(): VNodeChildren {
       if (this.btns.length === 0) return [];
-      const children = [];
+      const children: VNode[] = [];
       for (const btn of this.btns) {
         const button = this.$createElement(
           VBtn,
