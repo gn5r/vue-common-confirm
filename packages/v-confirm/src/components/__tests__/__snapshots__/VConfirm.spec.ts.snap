@@ -45,8 +45,6 @@ exports[`VConfirm.ts should render the close icon in toolbar 1`] = `
             </header>
           </div>
           <div class="v-card__text black--text text-body-1" style="overflow-wrap: break-word; white-space: pre-wrap; padding: 16px;"></div>
-          <hr role="separator" aria-orientation="horizontal" class="v-divider theme--light">
-          <div class="v-card__actions justify-end"></div>
         </div>
       </div>
     </transition-stub>
@@ -69,8 +67,6 @@ exports[`VConfirm.ts should render the message text 1`] = `
           </div>
           <div class="v-card__text black--text text-body-1" style="overflow-wrap: break-word; white-space: pre-wrap; padding: 16px;">test
             message</div>
-          <hr role="separator" aria-orientation="horizontal" class="v-divider theme--light">
-          <div class="v-card__actions justify-end"></div>
         </div>
       </div>
     </transition-stub>
@@ -92,8 +88,6 @@ exports[`VConfirm.ts should render the toolbar and default color is primary 1`] 
             </header>
           </div>
           <div class="v-card__text black--text text-body-1" style="overflow-wrap: break-word; white-space: pre-wrap; padding: 16px;"></div>
-          <hr role="separator" aria-orientation="horizontal" class="v-divider theme--light">
-          <div class="v-card__actions justify-end"></div>
         </div>
       </div>
     </transition-stub>
