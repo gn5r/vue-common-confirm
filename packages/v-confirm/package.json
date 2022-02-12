@@ -1,7 +1,7 @@
 {
   "name": "@gn5r/vue-common-confirm",
   "version": "3.0.0-beta.0",
-  "description": "Conform components for Vue.js projects using Vuetify",
+  "description": "Confirm component for Vue.js projects using Vuetify",
   "author": {
     "name": "shangyuan.tuolang",
     "url": "https://gn5r.github.io"
@@ -32,8 +32,7 @@
     "test:unit": "cross-env NODE_ENV=test jest -i",
     "test:watch": "cross-env NODE_ENV=test jest -i --watch",
     "lint": "eslint --ext .js,.ts src",
-    "lint:fix": "yarn run lint --fix",
-    "release": "standard-version"
+    "lint:fix": "yarn run lint --fix"
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",
