@@ -11,7 +11,7 @@ export type VConfirmBtn = {
   text?: string;
   color?: Colors;
   outlined?: boolean;
-  class?: Array<string>;
+  class?: string | Array<string>;
   function: FunctionConstructor | VoidFunction;
 };
 
@@ -47,7 +47,7 @@ type ExtendedVue<
 >;
 
 /* eslint-disable @typescript-eslint/ban-types */
-const VConfirm: ExtendedVue<
+declare const VConfirm: ExtendedVue<
   Vue,
   {},
   {},
