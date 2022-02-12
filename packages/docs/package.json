@@ -11,8 +11,8 @@
     "docs"
   ],
   "scripts": {
-    "serve": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack.dev.js --mode=development",
-    "build": "cross-env NODE_ENV=production webpack --config ./build/webpack.prod.js --mode=production",
+    "serve": "cross-env NODE_ENV=development webpack-dev-server",
+    "build": "cross-env NODE_ENV=production webpack",
     "lint": "eslint --ext .ts,.vue src",
     "lint:fix": "yarn run lint --fix"
   },
